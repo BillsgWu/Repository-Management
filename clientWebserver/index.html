@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Repoman Webserver</title>
+        <meta name="viewport" content="width=50vh, initial-scale=2">
+        <link rel="stylesheet" href="Bootstrap4.4.1/bootstrap.min.css">
+        <script src="Bootstrap4.4.1/jquery-3.3.1.min.js"></script>
+        <script src="Bootstrap4.4.1/popper.min.js"></script>
+        <script src="Bootstrap4.4.1/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid mt-3">
+            <button class="btn btn-light" onclick="Din();" data-toggle="modal" data-target="#Dinmodel"><font size="5">入库</font></button>
+            <button class="btn btn-light" onclick="Dout();" data-toggle="modal" data-target="#Doutmodel"><font size="5">出库</font></button>
+            <table class="table table-striped mt-3">
+                <thead>
+                    <th>ID</th>
+                    <th>名称</th>
+                    <th>标签</th>
+                    <th>厂商</th>
+                    <th>计数</th>
+                    <th>下限</th>
+                    <th>上限</th>
+                </thead>
+                <tbody id="existbody">
+                </tbody>
+            </table>
+            <ul class="list-group mt-3" id="messageq">
+            </ul>
+        </div>
+        <div class="modal fade" id="Dinmodel" tabindex="-1" role="dialog" aria-labelledby="DinmodelTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="DinmodelTitle">入库窗口</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="dinmain">
+                        <p>
+                            货品名称：
+                            <select name="good" id="dinselectGoods">
+                            </select>
+                        </p>
+                        <p>
+                            计数：
+                            <input type="number" value="1" name="count" id="dininputCount">
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="dinok" type="button" class="btn btn-light" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="Doutmodel" tabindex="-1" role="dialog" aria-labelledby="DoutmodelTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="DoutmodelTitle">出库窗口</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="doutmain">
+                        <p>
+                            货品名称：
+                            <select name="good" id="doutselectGoods">
+                            </select>
+                        </p>
+                        <p>
+                            计数：
+                            <input type="number" value="1" name="count" id="doutinputCount">
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="doutok" type="button" class="btn btn-light" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="lib.js"></script>
+    <script src="functions.js"></script>
+    <script src="update.js"></script>
+</html>
